@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ChatApp - Profile</title>
+
+
+<style>
+
+/* =====================================
+   ChatApp Profile Page
+===================================== */
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #075E54,
+        #128C7E
+    );
+
+}
+
+
+
+/* PROFILE CARD */
+
+
+.profile-container{
+
+    width:380px;
+
+    max-width:95%;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.25);
+
+}
+
+
+
+/* TITLE */
+
+
+.profile-container h2{
+
+    color:#075E54;
+
+    margin-bottom:25px;
+
+    font-size:28px;
+
+}
+
+
+
+/* IMAGE */
+
+
+.profile-image{
+
+    width:120px;
+
+    height:120px;
+
+    margin:auto;
+
+    margin-bottom:20px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:4px solid #25D366;
+
+    background:#eee;
+
+}
+
+
+
+.profile-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+/* INPUT */
+
+
+input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin:10px 0;
+
+    border-radius:12px;
+
+    border:1px solid #ddd;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+
+
+input:focus{
+
+    border-color:#25D366;
+
+    box-shadow:
+    0 0 8px
+    rgba(37,211,102,.4);
+
+}
+
+
+
+
+/* BUTTON */
+
+
+button{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#25D366;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+
+button:hover{
+
+    background:#128C7E;
+
+}
+
+
+
+
+/* BACK BUTTON */
+
+
+.back-btn{
+
+    display:block;
+
+    margin-top:20px;
+
+    text-decoration:none;
+
+    color:#075E54;
+
+    font-weight:bold;
+
+}
+
+
+
+.back-btn:hover{
+
+    color:#25D366;
+
+}
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:500px){
+
+
+.profile-container{
+
+    padding:25px;
+
+}
+
+
+.profile-image{
+
+    width:100px;
+
+    height:100px;
+
+}
+
+
+.profile-container h2{
+
+    font-size:24px;
+
+}
+
+
+}
+
+.logout-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#e53935;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+.logout-btn:hover{
+
+    background:#c62828;
+
+}
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<div class="profile-container">
+
+
+
+    <h2>
+        👤 My Profile
+    </h2>
+
+
+
+    <div class="profile-image">
+
+        <img
+        id="preview"
+        src="https://via.placeholder.com/120"
+        alt="Profile">
+
+    </div>
+
+
+
+
+    <input
+    id="name"
+    type="text"
+    placeholder="Enter Your Name">
+
+
+
+    <input
+    id="photo"
+    type="text"
+    placeholder="Enter Photo URL">
+
+
+
+
+
+    <button id="save">
+
+        Save Profile
+
+    </button>
+
+
+<button id="logoutBtn" class="logout-btn">
+    🚪 Logout
+</button>
+
+
+    <a
+    href="chat.html"
+    class="back-btn">
+
+        ← Back To Chat
+
+    </a>
+
+
+
+</div>
+
+
+
+
+<script type="module" src="js/profile.js"></script>
+
+
+
+<script>
+
+
+const photoInput =
+document.getElementById("photo");
+
+
+const preview =
+document.getElementById("preview");
+
+
+
+photoInput.addEventListener(
+"input",
+()=>{
+
+
+    preview.src =
+    photoInput.value
+    ||
+    "https://via.placeholder.com/120";
+
+
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>

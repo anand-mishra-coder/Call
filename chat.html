@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ChatApp</title>
+
+<link rel="stylesheet" href="css/chat.css">
+
+</head>
+
+
+<body>
+
+
+<div class="chat-container">
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+
+<div class="profile">
+
+<h2>
+💬 ChatApp
+</h2>
+
+</div>
+
+
+
+<div class="search-box">
+
+<input
+
+type="text"
+
+id="searchUser"
+
+placeholder="Search user..."
+
+autocomplete="off">
+
+</div>
+
+
+
+
+<div id="users"></div>
+
+
+</aside>
+
+
+
+
+
+<!-- ================= CHAT AREA ================= -->
+
+
+<main class="chat-box">
+
+
+
+<!-- HEADER -->
+
+<header class="chat-header">
+
+
+<div class="chat-user-info">
+
+
+<h3 id="chatUser">
+
+Select User
+
+</h3>
+
+
+<small id="userStatus">
+
+Offline
+
+</small>
+
+
+</div>
+
+
+
+
+
+<div class="header-buttons">
+
+
+<!-- Voice Call -->
+
+<button id="callBtn">
+
+📞
+
+</button>
+
+
+
+<!-- Video Call -->
+
+<button id="videoCallBtn">
+
+📹
+
+</button>
+
+
+
+
+<button id="themeBtn">
+
+🌙
+
+</button>
+
+
+
+
+<a href="profile.html">
+
+👤
+
+</a>
+
+
+
+
+
+<button id="logoutBtn">
+
+🚪
+
+</button>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+
+
+<!-- MESSAGES -->
+
+
+<div
+
+id="messages"
+
+class="messages">
+
+</div>
+
+
+
+
+
+
+<!-- TYPING -->
+
+
+<div
+
+id="typing"
+
+class="typing">
+
+</div>
+
+
+
+
+
+
+
+<!-- REPLY BOX -->
+
+
+<div
+
+id="replyBox"
+
+class="reply-box"
+
+style="display:none;">
+
+
+<div class="reply-content">
+
+
+<small>
+
+Replying to
+
+</small>
+
+
+<span id="replyText">
+
+</span>
+
+
+</div>
+
+
+
+<button id="cancelReply">
+
+✖
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- EMOJI BOX -->
+
+
+<div
+
+id="emojiBox"
+
+class="emoji-box">
+
+</div>
+
+
+
+
+
+
+
+
+<!-- SEND MESSAGE -->
+
+
+<footer class="send-box">
+
+
+<button id="emojiBtn">
+
+😊
+
+</button>
+
+
+
+
+<input
+
+id="messageInput"
+
+type="text"
+
+placeholder="Type a message..."
+
+autocomplete="off"
+
+spellcheck="false">
+
+
+
+
+
+<button id="sendBtn">
+
+➤
+
+</button>
+
+
+
+</footer>
+
+
+
+
+</main>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ================= CALL UI ================= -->
+
+
+<div id="incomingCall" class="incoming-call" style="display:none;">
+
+
+<div class="call-card">
+
+
+<h3>
+📞 Incoming Call
+</h3>
+
+
+<p id="callerName">
+
+Someone is calling...
+
+</p>
+
+
+
+
+<button id="acceptCall">
+
+Accept
+
+</button>
+
+
+
+<button id="rejectCall">
+
+Reject
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- AUDIO FOR WEBRTC -->
+
+
+<audio
+
+id="remoteAudio"
+
+autoplay>
+
+</audio>
+
+
+
+
+
+
+<script type="module" src="js/chat.js"></script>
+
+<script type="module" src="js/emoji.js"></script>
+
+<script type="module" src="js/theme.js"></script>
+
+<script type="module" src="js/call.js"></script>
+
+
+
+</body>
+
+</html>
